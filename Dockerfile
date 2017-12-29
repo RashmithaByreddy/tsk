@@ -8,7 +8,7 @@ RUN useradd praveen
 RUN (echo kumar ; echo kumar) | passwd kumar
 RUN sed -i "/^PermitRootLogin/c\PermitRootLogin yes" /etc/ssh/sshd_config 
 RUN sed -i "s/#PasswordAuthentication yes/PasswordAuthentication yes/g" /etc/ssh/sshd_config
-RUN echo "amar    ALL=(ALL:ALL) ALL" >> /etc/sudoers
+RUN echo "praveen    ALL=(ALL:ALL) ALL" >> /etc/sudoers
 EXPOSE 8080
 EXPOSE 22
 ENTRYPOINT ./apache-tomcat-7.0.82/bin/startup.sh && service ssh start && bash 
